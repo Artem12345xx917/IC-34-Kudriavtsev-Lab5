@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Визначення мета-тегів для кодування і адаптації до мобільних пристроїв -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Заголовок сторінки -->
+    <title>Спливаючі підказки</title>
+
+    <!-- Підключення зовнішнього CSS файлу для стилів -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Заголовок сторінки -->
+    <h1>Додайте підказки до елементів на сторінці</h1>
+
+    <!-- Форма для введення нового елемента та підказки -->
+    <div>
+        <label for="elementText">Текст елемента:</label>
+        <!-- Поле для введення тексту елемента -->
+        <input type="text" id="elementText" placeholder="Введіть текст елемента" />
+    </div>
+
+    <div>
+        <label for="tooltipText">Текст підказки:</label>
+        <!-- Поле для введення тексту підказки -->
+        <input type="text" id="tooltipText" placeholder="Введіть текст підказки" />
+    </div>
+
+    <!-- Кнопка для додавання нової підказки -->
+    <button onclick="createTooltip()">Додати підказку</button>
+
+    <!-- Основна область, де знаходяться тестові тексти -->
+    <div id="content">
+      
+    </div>
+
+    <!-- Блок для відображення спливаючої підказки -->
+    <div class="tooltip"></div>
+
+    <!-- Підключення JavaScript файлу для функціональності -->
+    <script src="script.js"></script>
+</body>
+</html>

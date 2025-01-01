@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Message</title>
+</head>
+<body>
+    <script>
+        // Оголошення функції getShippingMessage
+        function getShippingMessage(country, price, deliveryFee) {
+            // Обчислюємо загальну вартість замовлення
+            const totalPrice = price + deliveryFee;
+            
+            // Повертаємо рядок з повідомленням
+            return `Shipping to ${country} will cost ${totalPrice} credits`;
+        }
+
+        let isValidInput = false;
+
+        // Цикл для повторного запиту даних, поки вони не будуть правильними
+        while (!isValidInput) {
+            // Отримуємо значення від користувача
+            const country = prompt("Enter the country for shipping:");
+            const price = parseFloat(prompt("Enter the price of the product:"));
+            const deliveryFee = parseFloat(prompt("Enter the delivery fee:"));
+
+            // Перевірка, чи введено правильні числа для ціни та вартості доставки
+            if (isNaN(price) || isNaN(deliveryFee)) {
+                console.log("Please enter valid numbers for price and delivery fee.");
+                // Якщо введені неправильні дані, запитуємо повторно
+            } else {
+                // Викликаємо функцію та виводимо результат в консоль
+                const message = getShippingMessage(country, price, deliveryFee);
+                console.log(message);  // Виводимо повідомлення в консоль
+                isValidInput = true; // Завершаем цикл, если все данные правильные
+            }
+        }
+    </script>
+</body>
+</html>

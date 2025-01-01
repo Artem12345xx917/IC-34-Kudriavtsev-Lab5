@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repair Droids Transaction</title>
+</head>
+<body>
+    <script>
+        // Оголошення функції makeTransaction
+        function makeTransaction(quantity, pricePerDroid, customerCredits) {
+            // Обчислюємо загальну вартість замовлення
+            const totalPrice = quantity * pricePerDroid;
+
+            // Перевірка чи є достатньо кредитів для сплати
+            if (totalPrice > customerCredits) {
+                return "Insufficient funds!"; // Якщо коштів недостатньо
+            } else {
+                return `You ordered ${quantity} droids worth ${totalPrice} credits!`; // Якщо коштів достатньо
+            }
+        }
+
+        // Приклад виклику функції
+        const quantity = parseInt(prompt("Enter the quantity of droids:"));
+        const pricePerDroid = parseFloat(prompt("Enter the price per droid:"));
+        const customerCredits = parseFloat(prompt("Enter the number of credits on your account:"));
+
+        // Викликаємо функцію та виводимо результат
+        const message = makeTransaction(quantity, pricePerDroid, customerCredits);
+        console.log(message); // Виводимо результат в консоль
+        alert(message); // Виводимо результат у вікні alert
+    </script>
+</body>
+</html>

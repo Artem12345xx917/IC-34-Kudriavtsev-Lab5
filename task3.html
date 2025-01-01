@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Масиви в JavaScript</title>
+</head>
+<body>
+    <h1>Тестуємо функцію makeArray</h1>
+
+    <script>
+        // Функція для об'єднання масивів та перевірки довжини
+        function makeArray(firstArray, secondArray, maxLength) {
+            // Об'єднуємо два масиви
+            const mergedArray = firstArray.concat(secondArray);
+            
+            // Якщо загальна довжина перевищує maxLength, повертаємо тільки перші maxLength елементів
+            if (mergedArray.length > maxLength) {
+                return mergedArray.slice(0, maxLength);
+            }
+            
+            // Якщо довжина масиву не перевищує maxLength, повертаємо весь масив
+            return mergedArray;
+        }
+
+        // Функція для обробки введених значень
+        function processArrays() {
+            // Отримуємо значення введених масивів та максимального розміру через prompt
+            const firstArrayInput = prompt("Введіть перший масив (через кому, наприклад: 1, 2, 3):");
+            const secondArrayInput = prompt("Введіть другий масив (через кому, наприклад: 4, 5, 6):");
+            const maxLengthInput = prompt("Введіть максимальну довжину масиву:");
+
+            // Перетворюємо введені значення на масиви чисел
+            const firstArray = firstArrayInput.split(',').map(num => parseInt(num.trim()));
+            const secondArray = secondArrayInput.split(',').map(num => parseInt(num.trim()));
+            const maxLength = parseInt(maxLengthInput);
+
+            // Виводимо введені масиви та максимальну довжину в консоль
+            console.log(`Введений перший масив: [${firstArray}]`);
+            console.log(`Введений другий масив: [${secondArray}]`);
+            console.log(`Введена максимальна довжина: ${maxLength}`);
+
+            // Викликаємо функцію makeArray
+            const result = makeArray(firstArray, secondArray, maxLength);
+            
+            // Виводимо результат в консоль
+            console.log(`Результат: [${result}]`);
+        }
+
+        // Викликаємо функцію для обробки масивів
+        processArrays();
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+/* Стилі для спливаючої підказки */
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: none; /* За замовчуванням підказка схована */
+}
+
+/* Стилі для тексту з підказками */
+.tooltip-target {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+/* Стиль для полів вводу та кнопки */
+input {
+    margin: 10px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+button {
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
